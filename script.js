@@ -74,10 +74,30 @@ const fillCalendar = function (BIRTHDATE) {
     const dateInput = document.getElementById("birthday");
     const pickScreen = document.getElementById("birthdate-pick");
 
-    document.getElementById("submit").addEventListener("click", () => {
-        const date = dateInput.valueAsDate;
-        fillCalendar(date);
+    if(getCookie().birthday) {
+        fillCalendar(new Date(getCookie().birthday));
+        pickScreen.style.display = "none";
         pickScreen.style.opacity = 0;
-        setTimeout(() => pickScreen.style.display = "none", 700);
-    });
+    } else {
+        document.getElementById("submit").addEventListener("click", () => {
+            const date = dateInput.valueAsDate;
+            fillCalendar(date);
+            setCookie(date);
+
+            pickScreen.style.opacity = 0;
+            setTimeout(() => pickScreen.style.display = "none", 700);
+        });
+    }
+
+    function setCookie(birthday) {
+        const cookie = {
+            birthday: birthday
+        };
+
+        document.cookie = JSON.stringify(cookie);
+    }
+
+    function getCookie() {
+        return JSON.parse(document.cookie || "{}");
+    }
 })();

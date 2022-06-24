@@ -89,6 +89,11 @@ const fillCalendar = function (BIRTHDATE) {
         });
     }
 
+    document.getElementById("reset").addEventListener("click", () => {
+        document.cookie = "";
+        location.reload();
+    });
+
     function setCookie(birthday) {
         const cookie = {
             birthday: birthday

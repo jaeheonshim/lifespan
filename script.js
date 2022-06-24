@@ -74,15 +74,15 @@ const fillCalendar = function (BIRTHDATE) {
     const dateInput = document.getElementById("birthday");
     const pickScreen = document.getElementById("birthdate-pick");
 
-    if(getCookie().birthday) {
-        fillCalendar(new Date(getCookie().birthday));
+    if(getStorage()) {
+        fillCalendar(new Date(getStorage()));
         pickScreen.style.display = "none";
         pickScreen.style.opacity = 0;
     } else {
         document.getElementById("submit").addEventListener("click", () => {
             const date = dateInput.valueAsDate;
             fillCalendar(date);
-            setCookie(date);
+            setStorage(date);
 
             pickScreen.style.opacity = 0;
             setTimeout(() => pickScreen.style.display = "none", 700);
@@ -90,19 +90,15 @@ const fillCalendar = function (BIRTHDATE) {
     }
 
     document.getElementById("reset").addEventListener("click", () => {
-        document.cookie = "";
+        window.localStorage.removeItem("birthday");
         location.reload();
     });
 
-    function setCookie(birthday) {
-        const cookie = {
-            birthday: birthday
-        };
-
-        document.cookie = JSON.stringify(cookie);
+    function setStorage(birthday) {
+        window.localStorage.setItem("birthday", birthday);
     }
 
-    function getCookie() {
-        return JSON.parse(document.cookie || "{}");
+    function getStorage() {
+        return window.localStorage.getItem("birthday");
     }
 })();

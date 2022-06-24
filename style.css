@@ -3,6 +3,7 @@ html, body {
     height: 100%;
     margin: 0;
     font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
 }
 
 #container {
@@ -64,3 +65,34 @@ table.calendar {
     background-color: black;
     color: white;
 }
+
+#mobile-warning {
+    display: none;
+    position: fixed;
+    bottom: 4px;
+    left: 0;
+    right: 0;
+
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+
+    background-color: white;
+    border: solid 1px black;
+    z-index: 2;
+    border-radius: 1em;
+
+    padding: 0.2em 1em;
+}
+
+@media only screen and (max-device-width: 640px) {
+    #container {
+      display: flex;
+      border: 5px solid yellow;
+      flex-flow: column nowrap;
+    }
+
+    #mobile-warning {
+        display: block;
+    }
+  }

@@ -1,0 +1,14 @@
+#birthdate-pick {
+    position: fixed;
+
+    height: 100%;
+    width: 100%;
+
+    background-color: white;
+    z-index: 1;
+    transition: opacity 1s;
+}
+
+#birthdate-pick > div {
+    text-align: center;
+}

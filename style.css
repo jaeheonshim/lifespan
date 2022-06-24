@@ -1,0 +1,52 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+#container {
+    display: flex;
+    gap: 0.3em;
+}
+
+#container, #container div {
+    height: 100%;
+}
+
+#sidebar {
+    flex-basis: 12%;
+    padding: 0em 1em;
+}
+
+#calendar-contain {
+    flex-basis: 88%;
+}
+
+table.calendar {
+    table-layout: fixed;
+    width: 100%;
+    height: 100%;
+
+    border-spacing: 5px;
+}
+
+.calendar td {
+    border: solid 1px #808080;
+}
+
+.header th {
+    height: 1em;
+    font-size: 0.7em;
+    font-weight: 300;
+    text-align: center;
+}
+
+.calendar .filled {
+    border: solid 1px black;
+    background-color: black;
+}
+
+#percent {
+    cursor: pointer;
+}

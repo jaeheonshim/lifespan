@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+  <link href="pickbirthdate.css" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+  <title>Your Life in Weeks</title>
+</head>
+
+<body>
+  <div id="birthdate-pick">
+    <div>
+        <h1>Your Life in Weeks</h1>
+        <p>Enter your birthday.</p>
+        <input type="date" id="birthday">
+        <button id="submit">Submit</button>
+    </div>
+  </div>
+
+  <div id="container">
+    <div id="sidebar">
+      <h1>Your Life in Weeks</h1>
+      <p>This calendar represents your life in weeks. Each filled-in box represents a week that has already elapsed.</p>
+      <p>
+        <span id="weeks-elapsed"></span>
+        Assuming you live to age 80, <b id="percent"></b>
+      </p>
+    </div>
+    <div id="calendar-contain"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

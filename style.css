@@ -95,4 +95,13 @@ table.calendar {
     #mobile-warning {
         display: block;
     }
-  }
+}
+
+#credit {
+    position: absolute;
+    bottom: 0.5em;
+    left: 0.5em;
+
+    color: black;
+    text-decoration: underline;
+}
